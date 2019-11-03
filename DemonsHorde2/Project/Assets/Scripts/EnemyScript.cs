@@ -39,8 +39,8 @@ public class EnemyScript : MonoBehaviour {
 			Destroy(gameObject);
 			
 			//play die animation
-			gameObject.transform.parent.gameObject.animation["die"].layer = 1;
-			gameObject.transform.parent.gameObject.animation.Play("die");
+			gameObject.transform.parent.gameObject.GetComponent<Animation>()["die"].layer = 1;
+			gameObject.transform.parent.gameObject.GetComponent<Animation>().Play("die");
 
 			BreakoutGame.SP.HitBlock(rigid.position);
 			
@@ -49,8 +49,8 @@ public class EnemyScript : MonoBehaviour {
 		}
 		else //attack
 		{
-			gameObject.transform.parent.gameObject.animation["attack"].layer = 1;
-			gameObject.transform.parent.gameObject.animation.Play("attack");
+			gameObject.transform.parent.gameObject.GetComponent<Animation>()["attack"].layer = 1;
+			gameObject.transform.parent.gameObject.GetComponent<Animation>().Play("attack");
 		}
 
 	}

@@ -25,8 +25,8 @@ public class Block : MonoBehaviour {
 			Destroy(gameObject);
 
 			//play die animation
-			gameObject.transform.parent.gameObject.animation["die"].layer = 1;
-			gameObject.transform.parent.gameObject.animation.Play("die");
+			gameObject.transform.parent.gameObject.GetComponent<Animation>()["die"].layer = 1;
+			gameObject.transform.parent.gameObject.GetComponent<Animation>().Play("die");
 
 			blockHitCount++;
 			BreakoutGame.SP.HitBlock(rigid.position);

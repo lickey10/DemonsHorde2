@@ -85,7 +85,7 @@ public class lightsOut : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision collisionInfo ) {
-		Destroy(gameObject.collider);
+		Destroy(gameObject.GetComponent<Collider>());
 		TurnOffALight();
 	}
 

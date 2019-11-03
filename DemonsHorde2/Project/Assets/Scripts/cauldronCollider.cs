@@ -14,7 +14,7 @@ public class cauldronCollider : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision collisionInfo ) {
-		Destroy(gameObject.collider);
+		Destroy(gameObject.GetComponent<Collider>());
 
 		lightsOut.Instance.TurnOffALight();
 

@@ -32,8 +32,8 @@ public class treasure : MonoBehaviour {
 			//Destroy(gameObject);
 			
 			//play open animation
-			gameObject.animation["ChestAnim"].layer = 1;
-			gameObject.animation.Play("ChestAnim");
+			gameObject.GetComponent<Animation>()["ChestAnim"].layer = 1;
+			gameObject.GetComponent<Animation>().Play("ChestAnim");
 
 			gamestate.Instance.GotKey = false;
 

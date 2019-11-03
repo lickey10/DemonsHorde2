@@ -8,7 +8,7 @@ public class Powerup_ExtraBall : MonoBehaviour {
 
 	void Awake () {
 		//drop powerup
-		rigidbody.velocity = new Vector3(0, 0, -5);
+		GetComponent<Rigidbody>().velocity = new Vector3(0, 0, -5);
 	}
 
 	// Use this for initialization

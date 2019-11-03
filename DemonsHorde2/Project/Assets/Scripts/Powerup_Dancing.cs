@@ -7,7 +7,7 @@ public class Powerup_Dancing : MonoBehaviour {
 
 	void Awake () {
 		//drop powerup
-		rigidbody.velocity = new Vector3(0, 0, -5);
+		GetComponent<Rigidbody>().velocity = new Vector3(0, 0, -5);
 	}
 
 	// Use this for initialization
@@ -43,14 +43,14 @@ public class Powerup_Dancing : MonoBehaviour {
 		foreach(GameObject block in currentBlocks)
 		{
 			//play dance animation
-			block.gameObject.animation["dance"].layer = 1;
-			block.gameObject.animation.Play("dance");
+			block.gameObject.GetComponent<Animation>()["dance"].layer = 1;
+			block.gameObject.GetComponent<Animation>().Play("dance");
 
 //			(EnemyScript)(block.transform.FindChild("collider").GetComponent<EnemyScript>()).Points = ((EnemyScript)block.transform.FindChild("collider").GetComponent<EnemyScript>()).Points * 2;
 
 
 				try {
-					EnemyScript eScript = block.transform.FindChild("collider").GetComponent<EnemyScript>();//.Points = block.transform.GetComponentInChildren<enemyScript>().Points*2;
+					EnemyScript eScript = block.transform.Find("collider").GetComponent<EnemyScript>();//.Points = block.transform.GetComponentInChildren<enemyScript>().Points*2;
 					eScript.Points = eScript.Points * 2;
 				} catch (System.Exception ex) {
 					string exceptionMessage = ex.Message;
@@ -67,14 +67,14 @@ public class Powerup_Dancing : MonoBehaviour {
 		foreach(GameObject block in currentBlocks)
 		{
 			//play dance animation
-			block.gameObject.animation["idle"].layer = 1;
-			block.gameObject.animation.Play("idle");
+			block.gameObject.GetComponent<Animation>()["idle"].layer = 1;
+			block.gameObject.GetComponent<Animation>().Play("idle");
 			//block.GetComponent<enemyScript>().Points = block.GetComponent<enemyScript>().Points/2;
 //			EnemyScript eScript = block.GetComponentInChildren<EnemyScript>();//.Points = block.transform.GetComponentInChildren<enemyScript>().Points*2;
 //			eScript.Points = eScript.Points / 2;
 
 			try {
-				EnemyScript eScript = block.transform.FindChild("collider").GetComponent<EnemyScript>();//.Points = block.transform.GetComponentInChildren<enemyScript>().Points*2;
+				EnemyScript eScript = block.transform.Find("collider").GetComponent<EnemyScript>();//.Points = block.transform.GetComponentInChildren<enemyScript>().Points*2;
 				eScript.Points = eScript.Points / 2;
 			} catch (System.Exception ex) {
 				string exceptionMessage = ex.Message;
